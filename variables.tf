@@ -4,26 +4,6 @@ variable "location" {
   description = "Location for all resources"
 }
 
-variable "client_id" {
-  type        = string
-  description = "Value for client_id"
-}
-
-variable "client_secret" {
-  type        = string
-  description = "Value for client_secret"
-}
-
-variable "subscription_id" {
-  type        = string
-  description = "Value for subscription_id"
-}
-
-variable "tenant_id" {
-  type        = string
-  description = "Value for tenant_id"
-}
-
 ## RG ##
 variable "resource_group_name" {
   type        = string
@@ -50,16 +30,6 @@ variable "sql_server_name" {
 variable "sql_server_version" {
   type        = string
   description = "Version of Azure SQL Server"
-}
-
-variable "sql_server_admin_login" {
-  type        = string
-  description = "Administrator login for SQL Server"
-}
-
-variable "sql_server_admin_password" {
-  type        = string
-  description = "Administrator password for SQL Server"
 }
 
 ## SQL Database ##
