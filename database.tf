@@ -5,9 +5,9 @@ locals {
 }
 
 ## SQL Server ##
-resource "azurerm_sql_server" "Server" {
+resource "azurerm_sql_server" "server" {
   depends_on                   = [azurerm_resource_group.RG]
-  name                         = var.sql_database_name
+  name                         = var.sql_server_name
   resource_group_name          = var.resource_group_name
   location                     = var.location
   version                      = var.sql_server_version
@@ -17,8 +17,8 @@ resource "azurerm_sql_server" "Server" {
 }
 
 ## SQL Database ##
-resource "azurerm_sql_database" "Database" {
-  depends_on          = [azurerm_resource_group.RG]
+resource "azurerm_sql_database" "database" {
+  depends_on          = [azurerm_resource_group.RG, azurerm_sql_server.server]
   name                = var.sql_database_name
   resource_group_name = var.resource_group_name
   location            = var.location
