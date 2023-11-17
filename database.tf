@@ -11,9 +11,9 @@ resource "azurerm_sql_server" "Server" {
 
 ## SQL Database ##
 resource "azurerm_sql_database" "Database" {
-  name                         = var.sql_database_name
-  resource_group_name          = var.resource_group_name
-  location                     = var.location
-  server_name                  = var.sql_server_name
-  tags                         = var.tags
+  name                = var.sql_database_name
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  server_name         = var.sql_server_name
+  tags                = var.tags
 }
